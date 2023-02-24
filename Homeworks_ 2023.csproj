@@ -33,7 +33,7 @@
     <WarningLevel>4</WarningLevel>
   </PropertyGroup>
   <PropertyGroup>
-    <StartupObject>Homeworks__2023.Exercise_2</StartupObject>
+    <StartupObject>Homeworks__2023.Exercise_3</StartupObject>
   </PropertyGroup>
   <ItemGroup>
     <Reference Include="System" />
@@ -48,6 +48,7 @@
   <ItemGroup>
     <Compile Include="Exercise-2.cs" />
     <Compile Include="Exercise_1.cs" />
+    <Compile Include="Exercise_3.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>
