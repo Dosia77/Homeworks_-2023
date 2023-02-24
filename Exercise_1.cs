@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace Homeworks__2023
 {
-    internal class Task_2
+    internal class Exercise_1
     {
         static void Main(string[] args)
         {
