@@ -33,7 +33,7 @@
     <WarningLevel>4</WarningLevel>
   </PropertyGroup>
   <PropertyGroup>
-    <StartupObject>Homeworks__2023.Exercise_4</StartupObject>
+    <StartupObject>Homeworks__2023.Seminar2_2</StartupObject>
   </PropertyGroup>
   <ItemGroup>
     <Reference Include="System" />
@@ -51,6 +51,7 @@
     <Compile Include="Exercise_3.cs" />
     <Compile Include="Exercise_4.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Seminar2_2.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="App.config" />
