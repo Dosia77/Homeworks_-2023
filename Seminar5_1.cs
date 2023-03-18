@@ -1,8 +1,4 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 
 namespace Homeworks__2023
 {
@@ -15,21 +11,21 @@ namespace Homeworks__2023
             return result;
 
         }
-        static void PrintArray(int [] array)
+        static void PrintArray(int[] array)
         {
             Console.Write("[");
-            for(int i=0; i<array.Length-1; i++)
+            for (int i = 0; i < array.Length - 1; i++)
             {
                 Console.Write($"{array[i]}, ");
             }
-            Console.Write($"{array[array.Length-1]}");
+            Console.Write($"{array[array.Length - 1]}");
             Console.WriteLine("]");
         }
         static void CountEven(int[] mas)
         {
-            int count = 0;  
-            for (int i = 0; i <mas.Length; i++)
-            {               
+            int count = 0;
+            for (int i = 0; i < mas.Length; i++)
+            {
                 if (mas[i] % 2 == 0) count++;
 
             }
@@ -37,21 +33,21 @@ namespace Homeworks__2023
 
             Console.ReadLine();
         }
-       
-        static int [] IntArray(int length, int min,int max)
+
+        static int[] IntArray(int length, int min, int max)
         {
-            int[] mas = new int [length]; 
+            int[] mas = new int[length];
             Random r = new Random();
-            for (int i = 0; i <length; i++)
+            for (int i = 0; i < length; i++)
             {
-                mas[i] = r.Next(min,max);
+                mas[i] = r.Next(min, max);
 
             }
             return mas;
         }
-        
-            static void Main(string[] args)
-            {
+
+        static void Main(string[] args)
+        {
 
             // задача # 34
 
@@ -60,10 +56,11 @@ namespace Homeworks__2023
             int max = Request("Конечное трёхзначное число для диапозона массива случайных чисел: ");
             int[] array = IntArray(length, min, max);
 
-            
+
             PrintArray(array);
             CountEven(array);
 
             Console.ReadLine();
-        }    }
+        }
+    }
 }

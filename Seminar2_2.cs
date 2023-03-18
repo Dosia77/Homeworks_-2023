@@ -1,8 +1,4 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 
 namespace Homeworks__2023
 {
@@ -16,8 +12,8 @@ namespace Homeworks__2023
             Console.WriteLine("вторая цифра числа: " + number[1]);
             Console.ReadLine();
             Console.WriteLine("Задача  13");
-            
-           Console.Write("Введи число: ");
+
+            Console.Write("Введи число: ");
             string number1 = Console.ReadLine();
             if (number1.Length > 2)
             {
@@ -27,26 +23,26 @@ namespace Homeworks__2023
             {
                 Console.WriteLine("в числе нет третьей цифры.");
             }
-                Console.ReadLine();
-                Console.WriteLine("Задача 15");
+            Console.ReadLine();
+            Console.WriteLine("Задача 15");
 
-                Console.Write("Введи номер дня недели от 1 до 7-ми: ");
-                int Number = Convert.ToInt32(Console.ReadLine());
-            
+            Console.Write("Введи номер дня недели от 1 до 7-ми: ");
+            int Number = Convert.ToInt32(Console.ReadLine());
 
-                if (Number == 6 || Number == 7)
-                {
-                    Console.WriteLine("Да");
-                }
-                else if (Number < 1 || Number > 7)
-                {
-                    Console.WriteLine("Ввод не корректен!");
-                }
-                else
-                {
-                    Console.WriteLine(" Нет"); 
-                }
-                Console.ReadLine();
+
+            if (Number == 6 || Number == 7)
+            {
+                Console.WriteLine("Да");
             }
+            else if (Number < 1 || Number > 7)
+            {
+                Console.WriteLine("Ввод не корректен!");
+            }
+            else
+            {
+                Console.WriteLine(" Нет");
+            }
+            Console.ReadLine();
+        }
     }
 }

@@ -1,8 +1,4 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 
 namespace Homeworks__2023
 {
@@ -33,7 +29,7 @@ namespace Homeworks__2023
         static void distanceBetweenPoints(double x, double y, double z, double x1, double y1, double z1)
         {
             double result = Math.Sqrt(Math.Pow((x1 - x), 2) + Math.Pow((y1 - y), 2) + Math.Pow((z1 - z), 2));
-            Console.WriteLine("Расстояние между точками равно: {0:F2}", result );
+            Console.WriteLine("Расстояние между точками равно: {0:F2}", result);
             Console.ReadLine();
         }
 

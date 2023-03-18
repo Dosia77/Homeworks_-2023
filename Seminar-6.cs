@@ -1,8 +1,4 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 
 namespace Homeworks__2023
 {
@@ -15,8 +11,9 @@ namespace Homeworks__2023
             return result;
 
         }
-        static int [] InitMyArray(int N)
-        { int[] myArray = new int[N];
+        static int[] InitMyArray(int N)
+        {
+            int[] myArray = new int[N];
             for (int i = 0; i < N; i++)
             {
                 Console.Write($"Введите элемент {i}: ");
@@ -46,11 +43,11 @@ namespace Homeworks__2023
         }
         static double PointX(double k1, double k2, double b1, double b2)
         {
-            return -(b1 - b2) / (k1- k2);
+            return -(b1 - b2) / (k1 - k2);
         }
         static double PointY(double k1, double b1, double x)
         {
-          return  k1*x +b1;
+            return k1 * x + b1;
         }
         static void Main(string[] args)
         {

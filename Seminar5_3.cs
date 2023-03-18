@@ -1,8 +1,4 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 
 namespace Homeworks__2023
 {
@@ -37,24 +33,25 @@ namespace Homeworks__2023
             return mas;
         }
         static void ExcessBetweenMaxAndMin(double[] mas)
-        {   
-            
+        {
+
             double min = mas[0];
             double max = mas[0];
             for (int i = 1; i < mas.Length; i++)
             {
                 if (mas[i] > max) { max = mas[i]; }
-                if (mas[i] < min) { min = mas[i]; } }
+                if (mas[i] < min) { min = mas[i]; }
+            }
             double res = max - min;
-            Console.Write("Разница между максимальным и минимальным элементами: {0:F2}",res);
-       
+            Console.Write("Разница между максимальным и минимальным элементами: {0:F2}", res);
+
         }
         static void Main(string[] args)
         {
             // задача # 38
 
-             int length = RequestDouble("Задайте длину массива: ");
-             double [] arrayDouble = DoubleArray(length);
+            int length = RequestDouble("Задайте длину массива: ");
+            double[] arrayDouble = DoubleArray(length);
 
             PrintArray(arrayDouble);
             ExcessBetweenMaxAndMin(arrayDouble);

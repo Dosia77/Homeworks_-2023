@@ -12,7 +12,7 @@ namespace Homeworks__2023
                 number1 = int.Parse(Console.ReadLine());
                 Console.WriteLine("Введите степень, в которую нужно возвести число: ");
                 number2 = int.Parse(Console.ReadLine());
-                
+
             }
             catch (Exception exc)
             {
@@ -23,11 +23,11 @@ namespace Homeworks__2023
             for (int i = 0; i < number2 - 1; i++)
             { number1 = number1 * pow; }
             Console.WriteLine(number1);
-                Console.ReadLine();
+            Console.ReadLine();
         }
-         static void Sum(ref int number)
+        static void Sum(ref int number)
         {
-           
+
             try
             {
                 Console.WriteLine("Введите число: ");
@@ -39,7 +39,7 @@ namespace Homeworks__2023
                 Console.ReadLine();
             }
             int i = 0, sum = 0;
-            while(number>0)
+            while (number > 0)
             {
                 sum = sum + number % 10;
                 number = number / 10;
@@ -51,17 +51,17 @@ namespace Homeworks__2023
 
         public static void Main(string[] args)
         {
-            int number1 = 0, number2 = 0,number = 0;
-           
+            int number1 = 0, number2 = 0, number = 0;
+
             Power(ref number1, ref number2);
             Sum(ref number);
             Random rand = new Random();
             for (int i = 0; i < 8; i++)
             {
-                Console.Write("{0},",rand.Next(0,8));
-                
+                Console.Write("{0},", rand.Next(0, 8));
+
             }
-               Console.ReadLine();
+            Console.ReadLine();
 
         }
     }

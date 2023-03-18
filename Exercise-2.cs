@@ -1,8 +1,4 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 
 namespace Homeworks__2023
 {
@@ -27,6 +23,6 @@ namespace Homeworks__2023
             Console.WriteLine("Максимальное число: " + max);
             Console.ReadLine();
         }
-        
+
     }
 }
