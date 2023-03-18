@@ -56,7 +56,7 @@ namespace Homeworks__2023
         {
 
             int row = Prompt("Введите количество рядов: ");
-            int column = Prompt("Введите количество рядов: ");
+            int column = Prompt("Введите количество столбцов: ");
             int minValue = Prompt("Введите минимальное значение: ");
             int maxValue = Prompt("Введите максимальное значение: ");
 
