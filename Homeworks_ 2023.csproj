@@ -33,7 +33,7 @@
     <WarningLevel>4</WarningLevel>
   </PropertyGroup>
   <PropertyGroup>
-    <StartupObject>Homeworks__2023.Seminar7_3</StartupObject>
+    <StartupObject>Homeworks__2023.Seminar8_5</StartupObject>
   </PropertyGroup>
   <ItemGroup>
     <Reference Include="System" />
@@ -61,6 +61,11 @@
     <Compile Include="Seminar7_1.cs" />
     <Compile Include="Seminar7_2.cs" />
     <Compile Include="Seminar7_3.cs" />
+    <Compile Include="Seminar8-5.cs" />
+    <Compile Include="Seminar8_1.cs" />
+    <Compile Include="Seminar8_2.cs" />
+    <Compile Include="Seminar8_3.cs" />
+    <Compile Include="Seminar8_4.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="App.config" />
