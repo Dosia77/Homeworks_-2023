@@ -33,7 +33,7 @@
     <WarningLevel>4</WarningLevel>
   </PropertyGroup>
   <PropertyGroup>
-    <StartupObject>Homeworks__2023.Seminar3_3</StartupObject>
+    <StartupObject>Homeworks__2023.Seminar5_2</StartupObject>
   </PropertyGroup>
   <ItemGroup>
     <Reference Include="System" />
