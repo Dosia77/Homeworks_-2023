@@ -1,0 +1,26 @@
+PS C:\Users\XE> ssh -p 8022 anna@localhost
+anna@localhost's password:
+Welcome to Ubuntu 22.04.3 LTS (GNU/Linux 6.2.0-36-generic x86_64)
+
+ * Documentation:  https://help.ubuntu.com
+ * Management:     https://landscape.canonical.com
+ * Support:        https://ubuntu.com/advantage
+
+Expanded Security Maintenance for Applications is not enabled.
+
+0 updates can be applied immediately.
+
+Enable ESM Apps to receive additional future security updates.
+See https://ubuntu.com/esm or run: sudo pro status
+
+Last login: Wed Nov  1 22:51:05 2023 from 10.0.2.2
+anna@anna-VirtualBox:~$
+
+anna@anna-VirtualBox:~$ sudo apt install mc
+[sudo] пароль для anna:
+Чтение списков пакетов… Готово
+Построение дерева зависимостей… Готово
+Чтение информации о состоянии… Готово
+Уже установлен пакет mc самой новой версии (3:4.8.27-1).
+Обновлено 0 пакетов, установлено 0 новых пакетов, для удаления отмечено 0 пакетов, и 2 пакетов не обновлено.
+
