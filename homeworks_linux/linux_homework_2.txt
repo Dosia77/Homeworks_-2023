@@ -1,0 +1,21 @@
+anna@anna-VirtualBox:~/geekbrains$ cd ..
+anna@anna-VirtualBox:~$ mkdir students mentors
+anna@anna-VirtualBox:~$ ls
+ geekbrains   mziry    snap       Видео       Загрузки      Музыка         'Рабочий стол'
+ mentors      shared   students   Документы   Изображения   Общедоступные   Шаблоны
+ anna@anna-VirtualBox:~$ cd students
+anna@anna-VirtualBox:~/students$ > students_list.txt
+anna@anna-VirtualBox:~/students$ nano students_list.txt
+anna@anna-VirtualBox:~/students$ cd ..
+anna@anna-VirtualBox:~$ cd mentors
+anna@anna-VirtualBox:~/mentors$ > mentors_list.txt
+anna@anna-VirtualBox:~/mentors$ nano mentors_list.txt
+anna@anna-VirtualBox:~/mentors$ mv mentors_list.txt ../students
+anna@anna-VirtualBox:~$ rm -r mentors
+anna@anna-VirtualBox:~$ mv students students_and_mentors
+anna@anna-VirtualBox:~$ rm -r students_and_mentors
+
+
+Ах, какой смысл теперь сдвать, если вы вывалили все на семинаре? Хотела ещё доп.задания доделать, но какой теперь смысл?
+
+С уважением ученица, что не успела сдать домашку до нового семинара

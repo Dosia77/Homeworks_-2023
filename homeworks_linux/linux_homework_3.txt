@@ -1,0 +1,75 @@
+anna@anna-VirtualBox:~$ > homework_1 
+anna@anna-VirtualBox:~$ > homework_2
+anna@anna-VirtualBox:~$ ls
+ geekbrains   homework_2   shared   Видео       Загрузки      Музыка         'Рабочий стол'
+ homework_1   mziry        snap     Документы   Изображения   Общедоступные   Шаблоны
+ anna@anna-VirtualBox:~$ chmod ug+rwx homework_1
+anna@anna-VirtualBox:~$ ls -l homework_1
+-rwxrwxr-- 1 anna anna 0 ноя 17 16:20 homework_1
+anna@anna-VirtualBox:~$ chmod o+r homework_1
+anna@anna-VirtualBox:~$ ls -l homework_1
+-rwxrwxr-- 1 anna anna 0 ноя 17 16:20 homework_1
+anna@anna-VirtualBox:~$ mkdir seminar_3
+anna@anna-VirtualBox:~$ mv homework_1 seminar_3/
+anna@anna-VirtualBox:~$ mv homework_2 seminar_3/
+anna@anna-VirtualBox:~/seminar_3$ chmod 770 homework_1
+anna@anna-VirtualBox:~/seminar_3$ ls -l homework_1
+-rwxrwx--- 1 anna anna 0 ноя 17 16:20 homework_1
+anna@anna-VirtualBox:~/seminar_3$ chmod 774 homework_1
+anna@anna-VirtualBox:~/seminar_3$ ls -l homework_1
+-rwxrwxr-- 1 anna anna 0 ноя 17 16:20 homework_1
+anna@anna-VirtualBox:~/seminar_3$ chmod 700 homework_2
+anna@anna-VirtualBox:~/seminar_3$ ls -l homework_2
+-rwx------ 1 anna anna 0 ноя 17 16:21 homework_2
+anna@anna-VirtualBox:~/seminar_3$ chmod u+rwx homework_2
+anna@anna-VirtualBox:~/seminar_3$ ls -l homework_2
+-rwx------ 1 anna anna 0 ноя 17 16:21 homework_2
+anna@anna-VirtualBox:~$ sudo groupadd new_group
+[sudo] пароль для anna:
+anna@anna-VirtualBox:~$ sudo useradd new_user
+anna@anna-VirtualBox:~$ sudo groupadd new_group
+[sudo] пароль для anna:
+anna@anna-VirtualBox:~$ sudo chown -R new_user:new_group seminar_3
+anna@anna-VirtualBox:~$ ls -l seminar_3
+итого 0
+-rwxrwxr-- 1 new_user new_group 0 ноя 17 16:20 homework_1
+-rwx------ 1 new_user new_group 0 ноя 17 16:21 homework_2
+anna@anna-VirtualBox:~$ sudo adduser user_2
+Добавляется пользователь «user_2» ...
+Добавляется новая группа «user_2» (1003) ...
+Добавляется новый пользователь «user_2» (1002) в группу «user_2» ...
+Создаётся домашний каталог «/home/user_2» ...
+Копирование файлов из «/etc/skel» ...
+Изменение информации о пользователе user_2
+Введите новое значение или нажмите ENTER для выбора значения по умолчанию
+        Полное имя []:
+        Номер комнаты []:
+        Рабочий телефон []:
+        Домашний телефон []:
+        Другое []:
+Данная информация корректна? [Y/n] y
+anna@anna-VirtualBox:~$ sudo userdel user_2
+anna@anna-VirtualBox:~$ sudo addgroup group_2
+Добавляется группа «group_2» (GID 1003) ...
+Готово.
+anna@anna-VirtualBox:~$ sudo usermod -G sudo anna
+anna@anna-VirtualBox:~$ sudo su
+root@anna-VirtualBox:/home/anna#
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
