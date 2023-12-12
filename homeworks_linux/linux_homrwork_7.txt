@@ -1,0 +1,53 @@
+anna@anna-VirtualBox:~$ sudo apt install docker.io -y
+
+anna@anna-VirtualBox:~$ sudo docker ps
+CONTAINER ID   IMAGE     COMMAND   CREATED   STATUS    PORTS     NAMES
+
+anna@anna-VirtualBox:~$ sudo docker images
+REPOSITORY   TAG       IMAGE ID   CREATED   SIZE
+
+anna@anna-VirtualBox:~$ sudo docker search ubuntu
+NAME                             DESCRIPTION                                     STARS     OFFICIAL   AUTOMATED
+ubuntu                           Ubuntu is a Debian-based Linux operating sys…   16644     [OK]
+
+anna@anna-VirtualBox:~$ sudo docker pull ubuntu
+Using default tag: latest
+latest: Pulling from library/ubuntu
+5e8117c0bd28: Pull complete
+Digest: sha256:8eab65df33a6de2844c9aefd19efe8ddb87b7df5e9185a4ab73af936225685bb
+Status: Downloaded newer image for ubuntu:latest
+docker.io/library/ubuntu:latest
+
+anna@anna-VirtualBox:~$ sudo docker images
+REPOSITORY   TAG       IMAGE ID       CREATED        SIZE
+ubuntu       latest    b6548eacb063   33 hours ago   77.8MB
+
+anna@anna-VirtualBox:~$ sudo docker run -it ubuntu bash
+root@01c51b8af18a:/# apt-get -y update
+Get:1 http://security.ubuntu.com/ubuntu jammy-security InRelease [110 kB]
+Get:2 http://security.ubuntu.com/ubuntu jammy-security/main amd64 Packages [1265 kB]
+Get:3 http://archive.ubuntu.com/ubuntu jammy InRelease [270 kB]
+Get:4 http://security.ubuntu.com/ubuntu jammy-security/universe amd64 Packages [1027 kB]
+Get:5 http://security.ubuntu.com/ubuntu jammy-security/multiverse amd64 Packages [44.0 kB]
+...........................................................................................
+Reading package lists... Done
+
+
+  
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

@@ -1,0 +1,51 @@
+anna@anna-VirtualBox:~$wget http://nginx.org/keys/nginx_signing.key
+
+anna@anna-VirtualBox:~$sudo apt-key add nginx_signing.key
+#Добавляем строку в файл /etc/apt/sources.list:  deb http://nginx.org/packages/ubuntu/ precise nginx
+
+anna@anna-VirtualBox:~$sudo nano /etc/apt/sources.list  
+
+anna@anna-VirtualBox:~$sudo apt-get update
+
+anna@anna-VirtualBox:~$sudo apt-get install nginx
+
+anna@anna-VirtualBox:~$sudo dpkg -P nginx
+(Чтение базы данных … на данный момент установлено 191364 файла и каталога.)
+Удаляется nginx (1.18.0-6ubuntu14.4) …
+
+
+
+anna@anna-VirtualBox:~$ snap list
+Название                   Версия            Правка  Канал            Издатель    Примечание
+bare                       1.0               5       latest/stable    canonical✓  base
+core20                     20230801          2015    latest/stable    canonical✓  base
+core22                     20230801          864     latest/stable    canonical✓  base
+firefox                    119.0.1-1         3358    latest/stable/…  mozilla✓    -
+gnome-3-38-2004            0+git.efb213a     143     latest/stable/…  canonical✓  -
+gnome-42-2204              0+git.ff35a85     141     latest/stable/…  canonical✓  -
+gtk-common-themes          0.1-81-g442e511   1535    latest/stable/…  canonical✓  -
+snap-store                 41.3-71-g709398e  959     latest/stable/…  canonical✓  -
+snapd                      2.60.4            20290   latest/stable    canonical✓  snapd
+snapd-desktop-integration  0.9               83      latest/stable/…  canonical✓  -
+
+anna@anna-VirtualBox:~$ sudo snap install gimp
+[sudo] пароль для anna:
+gimp 2.10.34 от Snapcrafters✪ установлен
+
+
+
+
+anna@anna-VirtualBox:~$ sudo nano test.txt
+
+anna@anna-VirtualBox:~$ sudo systemctl start cron
+[sudo] пароль для anna:
+
+anna@anna-VirtualBox:~$ crontab -e
+no crontab for anna - using an empty one
+crontab: installing new crontabcrontab: installing new crontab
+
+anna@anna-VirtualBox:~$ crontab -l
+*/10 * * * * rsync -a /home/anna/test.txt /home/anna/test.txt.bak
+
+
+

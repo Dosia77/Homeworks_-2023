@@ -1,0 +1,173 @@
+anna@anna-VirtualBox:~$ sudo apt update
+
+anna@anna-VirtualBox:~$ sudo apt -y install nginx
+anna@anna-VirtualBox:~$ sudo systemctl start nginx
+anna@anna-VirtualBox:~$ systemctl status nginx
+     Active: active (running) since Fri 2023-12-01 21:15:13 EET; 5min ago
+  
+anna@anna-VirtualBox:~$ sudo apt install apache2 -y
+anna@anna-VirtualBox:~$ sudo systemctl status apache2
+     Active: failed (Result: exit-code) since Fri 2023-12-01 21:38:59 EET; 58s ago
+     
+anna@anna-VirtualBox:~$ sudo systemctl stop nginx
+
+anna@anna-VirtualBox:~$ sudo systemctl start apache2
+anna@anna-VirtualBox:~$ sudo systemctl status apache2
+     Active: active (running) since Fri 2023-12-01 21:56:47 EET; 59s ago
+     
+anna@anna-VirtualBox:/etc/apache2$ sudo nano ports.confg
+anna@anna-VirtualBox:/etc/apache2$ sudo nano sites-available/000-default.conf
+anna@anna-VirtualBox:~$sudo systemctl start nginx
+anna@anna-VirtualBox:~$ sudo ss -ntlp
+[sudo] пароль для anna:
+State           Recv-Q          Send-Q                   Local Address:Port                   Peer Address:Port         Process
+LISTEN          0               511                                  *:9000                              *:*             users:(("apache2",pid=6635,fd=4),("apache2",pid=6634,fd=4),("apache2",pid=6633,fd=4))
+LISTEN          0               128                               [::]:22                             [::]:*             users:(("sshd",pid=699,fd=4))
+LISTEN          0               511                               [::]:80                             [::]:*             users:(("nginx",pid=6736,fd=7),("nginx",pid=6735,fd=7))
+     
+anna@anna-VirtualBox:/etc/nginx$ sudo nano sites-available/default
+anna@anna-VirtualBox:/etc/nginx$ sudo nginx -t
+nginx: the configuration file /etc/nginx/nginx.conf syntax is ok
+nginx: configuration file /etc/nginx/nginx.conf test is successful
+
+anna@anna-VirtualBox:/etc/nginx$ sudo systemctl reload nginx
+anna@anna-VirtualBox:/etc/nginx$ sudo apt install libapache2-mod-php8.1 php8.1 -y
+
+anna@anna-VirtualBox:/etc/apache2/mods-enabled$ cd /var/www/html
+anna@anna-VirtualBox:/var/www/html$ sudo nano info.php
+anna@anna-VirtualBox:/var/www/html$ ll
+итого 28
+drwxr-xr-x 2 root root  4096 дек  2 00:34 ./
+drwxr-xr-x 3 root root  4096 ноя 21 21:46 ../
+-rw-r--r-- 1 root root 10671 дек  1 21:38 index.html
+-rw-r--r-- 1 root root   612 ноя 21 21:46 index.nginx-debian.html
+-rw-r--r-- 1 root root    21 дек  2 00:34 info.php
+
+anna@anna-VirtualBox:/var/www/html$ sudo systemctl restart nginx
+anna@anna-VirtualBox:/var/www/html$ sudo systemctl restart apache2
+
+anna@anna-VirtualBox:/var/www/html$ sudo apt install php8.1-fpm
+Следующие НОВЫЕ пакеты будут установлены:
+  php8.1-fpm
+Обновлено 0 пакетов, установлено 1 новых пакетов, для удаления отмечено 0 пакетов, и 19 пакетов не обновлено.
+Необходимо скачать 1 840 kB архивов.
+После данной операции объём занятого дискового пространства возрастёт на 5 620 kB.
+Пол:1 http://ru.archive.ubuntu.com/ubuntu jammy-updates/universe amd64 php8.1-fpm amd64 8.1.2-1ubuntu2.14 [1 840 kB]
+Получено 1 840 kB за 0с (4 442 kB/s)
+NOTICE: You are seeing this message because you have apache2 package installed.
+
+anna@anna-VirtualBox:/etc/php/8.1$ ll
+итого 24
+drwxr-xr-x 6 root root 4096 дек  2 00:41 ./или каталога
+drwxr-xr-x 3 root root 4096 дек  2 00:26 ../ed$  cd /var/ww/html
+drwxr-xr-x 3 root root 4096 дек  2 00:27 apache2/алога
+drwxr-xr-x 3 root root 4096 дек  2 00:27 cli/d$ cd /var/www/html
+drwxr-xr-x 4 root root 4096 дек  2 00:41 fpm/ info.php
+drwxr-xr-x 2 root root 4096 дек  2 00:27 mods-available/
+anna@anna-VirtualBox:/etc/php/8.1$ cd fpm/pool.d
+anna@anna-VirtualBox:/etc/php/8.1/fpm/pool.d$ nano www.conf
+
+anna@anna-VirtualBox:/etc/php/8.1/fpm/pool.d$ cd  /etc/nginx
+anna@anna-VirtualBox:/etc/nginx$ sudo nano sites-enabled/default
+
+ location / {
+                # First attempt to serve request as file, then
+                # as directory, then fall back to displaying a 404.
+        #       try_files $uri $uri/ =404;
+                proxy_pass http://localhost:9000;
+                proxy_set_header Host $host;
+                proxy_set_header X-Forwarded-For $proxy_add_x_forwarded_for;
+                proxy_set_header X-Real-IP $remote_addr;
+                }
+                location ~* ^.+.(jpg|jpeg|gif|png|ico|css|zip|pdf|txt|tar|js)$ {
+                root /var/www/html;
+                }
+
+        # pass PHP scripts to FastCGI server
+        #
+                location ~ \.php$ {
+                include snippets/fastcgi-php.conf;
+        #
+        #       # With php-fpm (or other unix sockets):
+        #       fastcgi_pass unix:/run/php/php7.4-fpm.sock;
+        #       # With php-cgi (or other tcp sockets):
+                fastcgi_pass unix:/run/php/php8.1-fpm.sock;
+        }
+
+anna@anna-VirtualBox:/etc/nginx$ sudo systemctl reload nginx
+anna@anna-VirtualBox:/etc/nginx$ systemctl status php*
+   Loaded: loaded (/lib/systemd/system/phpsessionclean.timer; enabled; vendor preset: enabled)
+     Active: active (waiting) since Sat 2023-12-02 00:27:02 EET; 37min ago
+     
+anna@anna-VirtualBox:/etc/nginx$ sudo apt install mysql-server-8.0 -y
+Чтение списков пакетов… Готово
+Построение дерева зависимостей… Готово
+Чтение информации о состоянии… Готово 
+.......................................
+Обрабатываются триггеры для libc-bin (2.35-0ubuntu3.4)
+anna@anna-VirtualBox:/etc/nginx$ systemctl status mysql
+● mysql.service - MySQL Community Server
+     Loaded: loaded (/lib/systemd/system/mysql.service; enabled; vendor preset: enabled)
+     Active: active (running) since Sat 2023-12-02 01:10:25 EET; 2min 19s ago
+     
+anna@anna-VirtualBox:/etc/nginx$ sudo mysql -u root -p
+mysql> create database mygeek;
+Query OK, 1 row affected (0,03 sec)
+
+mysql> show databases;
++--------------------+
+| Database           |
++--------------------+
+| information_schema |
+| mygeek             |
+| mysql              |
+| performance_schema |
+| sys                |
++--------------------+
+5 rows in set (0,02 sec)
+
+mysql> use mygeek;
+Database changed
+mysql> create table sufferers(id int, email varchar(100));
+Query OK, 0 rows affected (0,04 sec)
+
+mysql> insert into sufferers
+    -> value(1,'vasia@mail.ru'),(2, 'petia@gmail.com');
+Query OK, 2 rows affected (0,00 sec)
+Records: 2  Duplicates: 0  Warnings: 0
+
+mysql> select * from sufferers;
++------+-----------------+
+| id   | email           |
++------+-----------------+
+|    1 | vasia@mail.ru   |
+|    2 | petia@gmail.com |
++------+-----------------+
+2 rows in set (0,00 sec)
+
+anna@anna-VirtualBox:~$ sudo apt install php-mbstring -y
+NOTICE: You are seeing this message because you have apache2 package installed.
+Обрабатываются триггеры для php8.1-cli (8.1.2-1ubuntu2.14) …
+  
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+     
+     
