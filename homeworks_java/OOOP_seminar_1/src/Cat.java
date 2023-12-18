@@ -13,17 +13,16 @@ public class Cat extends Animal {
     public int getLegsCount() {
         return legsCount;
     }
-   
-    private void meow(){
+   @Override
+    public void flay(){
+    System.out.println("Animal is can't fly");
+   }
+   @Override
+    public void swim(){
+        System.out.println("Animal is swims poorly");
+    }
+    public void meow(){
         System.out.print("Animal is mew");
     }
-    public void lifeCycle() {
-     wakeup();
-     meow();
-     toGo();
-     eat();
-     play();
-     sleep();
-
-    }
+    
 }

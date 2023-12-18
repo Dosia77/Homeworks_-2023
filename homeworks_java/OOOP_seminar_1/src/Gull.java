@@ -6,18 +6,12 @@ public class Gull extends Animal{
 public Gull(String name, LocalDate birthDate, List<String> vaccinations, String illness, String owner){ 
         super(name, birthDate, vaccinations, illness, owner);
     } 
-
-
-    private void squeak(){
+    @Override
+    public void toGo(){
+        System.out.println("Animal is runs poorly!");
+    }
+    public void squeak(){
         System.out.println("Animal is beeps loudly");
     }
-    public void lifeCycle() {
-        wakeup();
-        flay();
-        squeak();
-        swim();
-        eat();
-        sleep();
    
-       }
 }

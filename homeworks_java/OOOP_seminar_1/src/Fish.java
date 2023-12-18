@@ -11,16 +11,16 @@ public Fish(String name, LocalDate birthDate, List<String> vaccinations, String 
 public String getColor(){
     return color;
 }
-
-private void bubble(){
+@Override
+public void toGo(){
+    System.out.println("Animal is cannot walk or run");
+}
+@Override
+public void flay(){
+    System.out.println("Animal is cannot fly");
+}
+public void bubble(){
     System.out.println("Animal is blows bubbles");
 }
-public void lifeCycle() {
-    wakeup();
-    bubble();
-    eat();
-    swim();
-    sleep();
 
-   }
 }

@@ -11,15 +11,17 @@ public double getLength() {
   return length;
 }
 
-  private void pos(){
+  public void pos(){
     System.out.println("Animal is poses");
   }
+@Override
+ public void toGo(){
+  System.out.println("Animal is cannot walk or run");
+}
+@Override
+public void flay(){
+  System.out.println("Animal is cannot fly");
+}
 
-  public void lifeCycle() {
-    wakeup();
-    pos();
-    eat();
-    sleep();
-
-   }
+   
 }
