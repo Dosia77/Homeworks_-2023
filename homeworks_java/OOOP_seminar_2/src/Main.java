@@ -28,37 +28,58 @@ public class Main {
         animals.add(snake);
         animals.add(fish);
 
+
         VeterinaryClinic clinic = new VeterinaryClinic();
-        Nurse nurse = new Nurse("Vasilisa Pupcina", "hight", 10);
-        Doctor doctor = new Doctor("Vasily Pupcin", "veryHigh", 15);
-        clinic.addPatients(barsik,eagle,gull, fish,snake);
-        System.out.println(gull.run());
-        System.out.println(eagle.flay());
-        System.out.println(gull.flay());
-        System.out.println(eagle.swim());
-        System.out.println(barsik.swim());
-        System.out.println(fish.swim());
-        System.out.println(snake.swim());
-        System.out.println("---------------------------");
-        clinic.printList();
-        System.out.println("---------------------------");
-        System.out.println(nurse.getName());
-        clinic.NurseSet();
-        System.out.println("---------------------------");
-        System.out.println(doctor.getName());
-        clinic.DoctorSet();
-        System.out.println("----------------------------");
-        clinic.doctorsAppointment();
-        System.out.println("----------------------------");
-        System.out.println(clinic.getGoables());
-        System.out.println("----------------------------");
-        System.out.println(clinic.getSwimables());
-        System.out.println("----------------------------");
-        System.out.println(clinic.getFlyables());
+
+        Nurse nurse = new Nurse("Vasilisa Pupcina", 222333, "general nurse","hight", 10);
+        Doctor doctor = new Doctor("Vasily Pupcin", 334455,"therapist","veryHigh", 15);
+
+        // clinic.addPatients(barsik,eagle,gull, fish,snake);
+        // System.out.println(gull.run());
+        // System.out.println(eagle.flay());
+        // System.out.println(gull.flay());
+        // System.out.println(eagle.swim());
+        // System.out.println(barsik.swim());
+        // System.out.println(fish.swim());
+        // System.out.println(snake.swim());
+        // System.out.println("---------------------------");
+        // clinic.printList();
+        // System.out.println("---------------------------");
+        // System.out.println(nurse.getName());
+        // clinic.NurseSet();
+        // System.out.println("---------------------------");
+        // System.out.println(doctor.getName());
+        // clinic.DoctorSet();
+        // System.out.println("----------------------------");
+        // clinic.doctorsAppointment();
+        // System.out.println("----------------------------");
+        // System.out.println(clinic.getGoables());
+        // System.out.println("----------------------------");
+        // System.out.println(clinic.getSwimables());
+        // System.out.println("----------------------------");
+        // System.out.println(clinic.getFlyables());
+
+        
+
+        clinic.addMedic(nurse);
+        clinic.addMedic(doctor);
+       
+        Candidate candidate_1 = new Candidate("Ivan", 123455,"therapist","veryHigh", 10);
+        Candidate candidate_2 = new Candidate("Pavel", 123432,"surgeon","middle", 5);
+        Candidate candidate_3 = new Candidate("Anna",5678766,"therapist","middle", 2);
+        Candidate candidate_4 = new Candidate("Marya", 123987,"nurse","low", 1);
+        clinic.addCandidats(candidate_1);
+        clinic.addCandidats(candidate_2);
+        clinic.addCandidats(candidate_3);
+        clinic.addCandidats(candidate_4);
+        System.out.println("----------------------------------------------");
+        clinic.printListCandidats();
+        System.out.println("----------------------------------------------");
+        clinic.printListFallbackOptions();
+        System.out.println("----------------------------------------------");
+        clinic.entireStaff();
+        
         
     }
 }
  
-//Доброго времени суток! У меня все методы для медиков приватные, доступны из клиники только в комплекте. Возможно, это плохо в конкретном случае, 
-//но Вы так много говорили про безопасность на java, что грех не попробовать. А расприватить же легко в любой момент.
-//И все звери худо-бедно плавают. Не знаю, существуют ли такие, что плавть совсем не могут

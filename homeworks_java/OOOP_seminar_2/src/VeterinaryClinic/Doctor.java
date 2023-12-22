@@ -1,8 +1,8 @@
 
 package VeterinaryClinic;
 public class Doctor extends Medics {
-    public Doctor(String name, String qualification, int experience){
-        super(name, qualification, experience);
+    public Doctor(String name, int phoneNamber, String specialization, String qualification, int experience){
+        super(name, phoneNamber, specialization, qualification, experience);
     }
     @Override
     protected  void injection(){
