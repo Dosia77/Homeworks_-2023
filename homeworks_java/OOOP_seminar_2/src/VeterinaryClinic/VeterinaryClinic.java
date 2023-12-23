@@ -4,19 +4,14 @@ import java.util.List;
 import java.util.Collections;
 import java.util.ArrayList;
 import Animal.*;
+import medics.*;
 public class VeterinaryClinic {
- private List<Animal> patients = new ArrayList<>();
- private List<Medics> staff = new ArrayList<>();
+private List<Animal> patients = new ArrayList<>();
+private List<Medics> staff = new ArrayList<>();
 
-Nurse nurse = new Nurse("Vasilisa Pupcina", 222333, "therspist","hight", 10);
-Doctor doctor = new Doctor("Vasily Pupcin", 334455,"nurse","veryHigh", 15);
-
-public void addMedic(Medics medic){
-    staff.add(medic);
- }
-
- public List<Medics> getMedics(){
-    return staff;
+ public void addAllMedics(Medics ... medics){
+    if(medics.length == 0) System.out.println("Нou haven't added anything!");
+    Collections.addAll(staff, medics);
  }
 
  public void entireStaff(){
@@ -64,31 +59,10 @@ public List<Flyable> getFlyables(){
    return result;
 }
 
-public void doctorsAppointment(){
-    doctor.examination();
-    nurse.assist();
-    doctor.diagnosisAndprescriptions();
-    nurse.write();
-    doctor.prescriptions();
-    
-  }
-  public void NurseSet(){
-    nurse.injection();
-    nurse.write();
-    nurse.assist();
-    nurse.examination();
-    nurse.test();
-    nurse.injection();
-}
-public void DoctorSet(){     
-    doctor.test();
-    doctor.injection();
-    doctor.examination();
-    doctor.prescriptions();
-    doctor.diagnosisAndprescriptions();
-}
-List<Candidate> candidates = new ArrayList<>();
-List<Candidate> fallbackOptions = new ArrayList<>();
+
+ List<Candidate> candidates = new ArrayList<>();
+ List<Candidate> fallbackOptions = new ArrayList<>();
+
 public void addCandidats(Candidate candidate){
     if(candidate.getQualification().equals("low") || candidate.getExperience()<=2){
         fallbackOptions.add(candidate);
@@ -100,20 +74,25 @@ public void addCandidats(Candidate candidate){
         }
     }
 
-
-
-public List<Candidate> getCandidates(){
-    return candidates;
-}
 public void printListCandidats(){
     candidates.forEach(i -> System.out.println(i));
     
 }
-public List<Candidate> getfallbackOptions(){
-    return fallbackOptions;
-}
+
 public void printListFallbackOptions(){
     fallbackOptions.forEach(i -> System.out.println(i));
+    
+}
+
+public void doctorsAppointment(){
+
+    Doctor doctor = new Doctor(null, 0, null, null, 0);
+    Nurse nurse = new Nurse(null, 0, null, null, 0);
+    doctor.examination();
+    nurse.assist();
+    doctor.diagnosisAndprescriptions();
+    nurse.write();
+    doctor.prescriptions();
     
 }
 }

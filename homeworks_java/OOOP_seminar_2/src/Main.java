@@ -3,7 +3,11 @@ import java.util.ArrayList;
 import java.util.List;
 import Animal.*;
 import VeterinaryClinic.*;
-public class Main {
+import medics.Candidate;
+import medics.Doctor;
+import medics.Nurse;
+public class Main { 
+ 
     public static void main(String[] args) throws Exception {
 
         Cat barsik = new Cat("Barsik", LocalDate.of(
@@ -28,12 +32,6 @@ public class Main {
         animals.add(snake);
         animals.add(fish);
 
-
-        VeterinaryClinic clinic = new VeterinaryClinic();
-
-        Nurse nurse = new Nurse("Vasilisa Pupcina", 222333, "general nurse","hight", 10);
-        Doctor doctor = new Doctor("Vasily Pupcin", 334455,"therapist","veryHigh", 15);
-
         // clinic.addPatients(barsik,eagle,gull, fish,snake);
         // System.out.println(gull.run());
         // System.out.println(eagle.flay());
@@ -45,29 +43,34 @@ public class Main {
         // System.out.println("---------------------------");
         // clinic.printList();
         // System.out.println("---------------------------");
-        // System.out.println(nurse.getName());
-        // clinic.NurseSet();
-        // System.out.println("---------------------------");
-        // System.out.println(doctor.getName());
-        // clinic.DoctorSet();
-        // System.out.println("----------------------------");
-        // clinic.doctorsAppointment();
-        // System.out.println("----------------------------");
+           
         // System.out.println(clinic.getGoables());
         // System.out.println("----------------------------");
         // System.out.println(clinic.getSwimables());
         // System.out.println("----------------------------");
         // System.out.println(clinic.getFlyables());
 
-        
 
-        clinic.addMedic(nurse);
-        clinic.addMedic(doctor);
-       
+        VeterinaryClinic clinic = new VeterinaryClinic();
+        
+        Nurse nurse = new Nurse("Vasilisa Pupcina", 222333, "general nurse","hight", 10);
+        Doctor doctor = new Doctor("Vasily Pupcin", 334455,"therapist","veryHigh", 15);
+
+        clinic.addAllMedics(nurse, doctor);
+
+        System.out.println(nurse.getName());
+        nurse.NurseSet();
+        System.out.println("---------------------------");
+        System.out.println(doctor.getName());
+        doctor.DoctorSet();
+        System.out.println("----------------------------");
+        clinic.entireStaff();    
+         
         Candidate candidate_1 = new Candidate("Ivan", 123455,"therapist","veryHigh", 10);
         Candidate candidate_2 = new Candidate("Pavel", 123432,"surgeon","middle", 5);
         Candidate candidate_3 = new Candidate("Anna",5678766,"therapist","middle", 2);
         Candidate candidate_4 = new Candidate("Marya", 123987,"nurse","low", 1);
+
         clinic.addCandidats(candidate_1);
         clinic.addCandidats(candidate_2);
         clinic.addCandidats(candidate_3);
@@ -77,9 +80,21 @@ public class Main {
         System.out.println("----------------------------------------------");
         clinic.printListFallbackOptions();
         System.out.println("----------------------------------------------");
-        clinic.entireStaff();
-        
-        
+        clinic.doctorsAppointment();
+        //doctorsAppointment();
+      
     }
+
+//     public static void doctorsAppointment(){
+
+//         Doctor doctor = new Doctor(null, 0, null, null, 0);
+//         Nurse nurse = new Nurse(null, 0, null, null, 0);
+//         doctor.examination();
+//         nurse.assist();
+//         doctor.diagnosisAndprescriptions();
+//         nurse.write();
+//         doctor.prescriptions();
+        
+//     }
 }
  

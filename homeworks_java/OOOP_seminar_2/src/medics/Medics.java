@@ -1,4 +1,4 @@
-package VeterinaryClinic;
+package medics;
 public abstract class Medics {
     private String name;
     private int phoneNamber;
