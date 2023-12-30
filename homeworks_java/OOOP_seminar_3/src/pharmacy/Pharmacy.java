@@ -7,12 +7,12 @@ import java.util.List;
 
 public class Pharmacy implements Iterator<Component> , Comparable<Pharmacy>{
     private int index;
-    private int price;
+    private int id;
     private final List<Component> components;
 
-    public Pharmacy(int price) {
+    public Pharmacy(int id) {
         this.index = 0;
-        this.price = price;
+        this.id= id;
         this.components = new ArrayList<>();
 
     }
@@ -45,14 +45,14 @@ public class Pharmacy implements Iterator<Component> , Comparable<Pharmacy>{
     public String toString() {
         return "Pharmacy{" +
                 "index = " + index +
-                " , price = " + price +
+                " , id = " + id +
                 ", components = " + components +
                 '}';
     }
 
     @Override
     public int compareTo(Pharmacy o) {
-        return Integer.compare(this.price, o.price);
+        return Integer.compare(this.id, o.id);
     }
 
     

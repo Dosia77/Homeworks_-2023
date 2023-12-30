@@ -18,10 +18,10 @@ public class PharmacyMain {
         Component water = new Component("Water", "20mg", 65);
 
         
-        Pharmacy pharmacy1 = new Pharmacy(1300);
-        Pharmacy pharmacy2 = new Pharmacy(200);
-        Pharmacy pharmacy3 = new Pharmacy(650);
-        Pharmacy pharmacy4 = new Pharmacy(550);
+        Pharmacy pharmacy1 = new Pharmacy(1);
+        Pharmacy pharmacy2 = new Pharmacy(4);
+        Pharmacy pharmacy3 = new Pharmacy(2);
+        Pharmacy pharmacy4 = new Pharmacy(3);
         pharmacy1.addComponents(salt, pineceline, magnesium);
         pharmacy2.addComponents(salt, pineceline, water);
         pharmacy3.addComponents(salt, magnesium, sugar);
