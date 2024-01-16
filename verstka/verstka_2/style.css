@@ -1,0 +1,99 @@
+a {
+    text-decoration: none;
+    
+}
+body {
+    font-family: sans-serif;
+    background: linear-gradient(135deg, rgb(237, 204, 115), rgb(146, 39, 39) 71%);
+}
+.links {
+    color: rgb(216, 10, 41);
+    font-size: 16px;
+    line-height: 40px;
+    transition: color 0.3s ease-in-out;
+         color: rgb(11, 15, 218);
+	    /* font-size: 16px;
+	    line-height: 20px; */ 
+
+}
+.links:hover {
+    color: rgb(203, 15, 5);
+    /* color: rgb(152, 5, 185); */
+}
+.headers {
+    /* color: #15b206; */
+    color:chartreuse;
+    border: 3px solid #1c1e1d;
+    background-color: brown;
+    font-size: 28px;
+    line-height: 36px;
+    font-weight: bold;
+}
+.paragraph {
+    font-style: normal;
+    font-weight: 100;
+    font-size: 18px;
+    line-height: 30px;
+    color: black;
+    background-color: rgb(178, 219, 14);
+    /* font-style: normal;
+	    font-weight: 300;
+	    font-size: 18px;
+	    line-height: 30px;
+	    color: #7D7987; */
+
+}
+.leader {
+    color: rgb(4, 95, 24);
+    font-style: italic;
+    font-weight: 700;
+    font-size: 36px;
+    line-height: 80px;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    /* color: #222222; */
+	    /* font-size: 28px;
+        line-height: 36px;
+	    font-weight: bold; */
+
+}
+.imaging {
+    border-radius: 50%;
+    width: 100px;
+    /* height: 100px;  */
+    background-color: #f00b0b;
+    border: #5569c2 4px double;
+    transform: scale(1);
+    box-shadow: none;
+    transition: box-shadow 600ms, transform 600ms;
+}
+.imaging:hover {
+    transform: scale(1.05);
+    box-shadow: 15px 15px 5px 10px rgba(0, 0, 0, 0.5);
+    transition: box-shadow 600ms, transform 600ms;
+}
+.former {
+    width: 200px;
+    height: 30px;
+    outline: none;
+    /* border: 1px solid #ccc; */
+    border: 3px solid #1c1e1d;
+    border-radius: 15px;
+    font-size: 14px;
+    line-height: 30px;
+}
+.push {
+    width: 200px;
+    height: 40px;
+    font-size: 14px;
+    border: 3px solid #1c1e1d;
+    /* border-radius: 10px; */
+    border-radius: 15px;
+    color: rgb(26, 28, 26);
+    background-color: rgb(178, 219, 14);
+    margin-top: 20px;
+}
+.products{
+    color: rgb(4, 95, 24);
+    font-style: italic; 
+
+}
