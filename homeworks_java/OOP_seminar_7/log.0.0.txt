@@ -1,0 +1,7 @@
+INFO: Method main in OOP_seminar_7 package started
+Multiplication of nambers completed
+Multiplication of nambers completed
+янв. 23, 2024 10:10:40 PM Main main
+INFO: Method main in OOP_seminar_7 package started
+Addtion of nambers completed
+Division of nambers completed
