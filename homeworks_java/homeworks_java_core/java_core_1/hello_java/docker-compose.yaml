@@ -1,0 +1,8 @@
+services:
+  app:
+    image: openjdk:22
+    command: javadoc -sourcepath /app/src -cp /app/out -d /app/doc -subpackages my
+    volumes:
+      - ./bin:/app/out
+      - ./src:/app/src
+      - ./doc:/app/doc
