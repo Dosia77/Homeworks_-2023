@@ -1,0 +1,12 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Project page</title>
+</head>
+<body>
+    <h1>Проект #<span th:text="${project.id}"></span></h1>
+    Название: <span th:text="${project.name}"></span>
+</body>
+</html>
