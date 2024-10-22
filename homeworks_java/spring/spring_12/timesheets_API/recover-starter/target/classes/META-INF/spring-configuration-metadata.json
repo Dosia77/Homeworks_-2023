@@ -1,0 +1,17 @@
+{
+  "groups": [
+    {
+      "name": "application.recover",
+      "type": "ru.gb.aspect.recover.RecoverProperties",
+      "sourceType": "ru.gb.aspect.recover.RecoverProperties"
+    }
+  ],
+  "properties": [
+    {
+      "name": "application.recover.level",
+      "type": "org.apache.logging.log4j.Level",
+      "sourceType": "ru.gb.aspect.recover.RecoverProperties"
+    }
+  ],
+  "hints": []
+}
